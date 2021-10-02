@@ -1,8 +1,14 @@
-var str = "";
-for (let i = 100; i <= 200 ; i++){
-  str = "";
-  if (i % 3 === 0) str = "Loopy";
-  if (i % 4 === 0) str += "Lighthouse";
-  if (str === "") str = i;
-  console.log(str);
+function loopyLighthouse(range, multiples, words){
+  var str = "";
+  for (let i = range[0]; i < range[1] ; i++){
+    let str = "";
+    for (let j = 0; j <= multiples.length; j++){
+      if (i % multiples[j] === 0) str += words[j];
+    }
+    if (str === "") str = i;
+    console.log(str)
+  }
 }
+
+loopyLighthouse([5,50],[2,3],['two','three']);
+
